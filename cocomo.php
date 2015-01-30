@@ -11,15 +11,15 @@
         <div class="col-md-8 col-md-offset-2">
 
 
+                <div class="row">
+                    <div class="pe-blog-post">
 
-            <div class="row">
-                <div class="pe-blog-post">
                     <div class="form-group col-sm-6">
-                        <label for="js-input-revenue" class="control-label small text-muted">Тип системы:</label>
-                        <div class="input-group prefix suffix">
-<!--                            <span class="prefix">$</span>-->
-<!--                            <span class="suffix">M</span>-->
-                            <input type="text" tabindex="1" id="js-input-type" name="js-input-type" class="form-control mrs mbs js-widget-input" data-current="0" data-max="2" pattern="\d*" data-target="#js-in-type" value="Обычный">
+                        <label for="js-input-ebitda-delta" class="control-label small text-muted">Количество строк:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">%</span>-->
+                            <input type="number" tabindex="2" id="js-input-KDSI" name="js-input-KDSI" class="form-control mrs mbs js-widget-input"
+                                   data-type="kdsi" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$" data-target="#js-in-RELY" value="140000">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
                                 <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
@@ -28,56 +28,234 @@
                     </div>
 
                     <div class="form-group col-sm-6">
-                        <label for="js-input-ebitda-delta" class="control-label small text-muted">EBITDA improvement:</label>
-                        <div class="input-group suffix">
-                            <span class="suffix">%</span>
-                            <input type="number" tabindex="4" id="js-input-ebitda-delta" name="js-input-ebitda-delta" class="form-control mrs mbs js-widget-input" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$" data-target="#js-in-ebitda-delta" value="10">
+                        <label for="js-input-revenue" class="control-label small text-muted">Тип системы:</label>
+                        <div class="input-group prefix suffix">
+<!--                            <span class="prefix">$</span>-->
+<!--                            <span class="suffix">M</span>-->
+                            <input type="text" tabindex="1" id="js-input-type" name="js-input-type" class="form-control mrs mbs js-widget-input"
+                                   data-current="0" data-max="2" data-type="type-system" pattern="\d*" data-target="#js-in-kdsi" value="Обычный"
+                                   disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
-                                <button type="button" class="btn btn-default js-decrement" data-step="2" data-dp="0" tabindex="-1">–</button>
-                                <button type="button" class="btn btn-default js-increment" data-step="2" data-dp="0" tabindex="-1">+</button>
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1" disabled>–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group col-sm-6">
-                        <label for="js-input-margin" class="control-label small text-muted">Current EBITDA margin:</label>
+                        <label for="js-input-ebitda-delta" class="control-label small text-muted">Требуемая надежность:</label>
                         <div class="input-group suffix">
-                            <span class="suffix">%</span>
-                            <input type="number" tabindex="2" id="js-input-margin" name="js-input-margin" class="form-control mrs mbs js-widget-input" pattern="^(?=.)([+-]?([0-9]*))$" data-target="#js-in-margin" value="25">
+<!--                            <span class="suffix">%</span>-->
+                            <input type="text" tabindex="3" id="js-input-RELY" name="js-input-RELY" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-RELY" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
-                                <button type="button" class="btn btn-default js-decrement" data-step="5" data-dp="0" tabindex="-1">–</button>
-                                <button type="button" class="btn btn-default js-increment" data-step="5" data-dp="0" tabindex="-1">+</button>
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="js-input-margin" class="control-label small text-muted">Размер базы данных:</label>
+                        <div class="input-group suffix">
+<!--                            <span class="suffix">%</span>-->
+                            <input type="text" tabindex="3" id="js-input-DATA" name="js-input-margin" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*))$"
+                                   data-target="#js-in-margin" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement"  tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6 form-group">
-                        <label for="js-input-multiple-delta" class="control-label small text-muted">Multiple improvement:</label>
+                        <label for="js-input-multiple-delta" class="control-label small text-muted">Сложность продукта:</label>
                         <div class="input-group suffix">
-                            <span class="suffix">x</span>
-                            <input type="number" tabindex="5" id="js-input-multiple-delta" name="js-input-multiple-delta" class="form-control mrs mbs js-widget-input" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$" data-target="#js-in-multiple-delta" value="0.6">
+<!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="5" id="js-input-CPLX" name="js-input-multiple-delta" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-delta" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
-                                <button type="button" class="btn btn-default js-decrement" data-step=".1" data-dp="1" tabindex="-1">–</button>
-                                <button type="button" class="btn btn-default js-increment" data-step=".1" data-dp="1" tabindex="-1">+</button>
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6 form-group">
-                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Current EBITDA multiple:</label>
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Ограничение времени выполнения:</label>
                         <div class="input-group suffix">
-                            <span class="suffix">x</span>
-                            <input type="number" tabindex="3" id="js-input-multiple-pre" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$" data-target="#js-in-multiple-pre" value="8.0">
+<!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-TIME" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
-                                <button type="button" class="btn btn-default js-decrement" data-step=".2" data-dp="1" tabindex="-1">–</button>
-                                <button type="button" class="btn btn-default js-increment" data-step=".2" data-dp="1" tabindex="-1">+</button>
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
-                        <input type="submit" tabindex="6" onClick="recalculate_widget()" class="form-control mts btn btn-primary btn-block" value="Calculate" id="calculate-btn">
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Ограничение объема памяти:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-STOR" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Изменчивость виртуальной машины:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-VIRT" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Время реакции компьютера:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-TURN" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Способности аналитика:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-ACAP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Знание приложений:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-AEXP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Способности программиста:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-PCAP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Знание виртуальной машины:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-VEXP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Знание языка программирования:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-LEXP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Использование современных методов:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-MODP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Использование программных инструментов:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-TOOL" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label for="js-input-mutiple-pre" class="control-label small text-muted">Ограничение по срокам разработки:</label>
+                        <div class="input-group suffix">
+                            <!--                            <span class="suffix">x</span>-->
+                            <input type="text" tabindex="6" id="js-input-SCED" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
+                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
+                                <button type="button" class="btn btn-default js-increment" tabindex="-1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+<!--                    <div class="col-sm-6">-->
+<!--                        <input type="submit" tabindex="6" onClick="recalculate_widget()" class="form-control mts btn btn-primary btn-block" value="Calculate" id="calculate-btn">-->
+<!--                    </div>-->
                 </div>
 
                 <br><br>&nbsp;<br>
@@ -97,7 +275,7 @@
                     </tr>
                     <tr>
                         <td>Margin</td>
-                        <td><var id="js-in-margin">25</var>%</td>
+                        <td><var id="js-in-KDSI">140000</var></td>
                         <td class="subtle">&nbsp;</td>
                         <td><var id="js-in-margin2">25</var>%</td>
                     </tr>
