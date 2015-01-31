@@ -61,7 +61,7 @@
                         <div class="input-group suffix">
 <!--                            <span class="suffix">%</span>-->
                             <input type="text" tabindex="3" id="js-input-DATA" name="js-input-margin" class="form-control mrs mbs js-widget-input"
-                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*))$"
+                                   data-current="2" data-max="4" data-min="1" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*))$"
                                    data-target="#js-in-margin" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement"  tabindex="-1">–</button>
@@ -89,7 +89,7 @@
                         <div class="input-group suffix">
 <!--                            <span class="suffix">x</span>-->
                             <input type="text" tabindex="6" id="js-input-TIME" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
-                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-current="2" data-max="4" data-min="2" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
                                    data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
@@ -103,7 +103,7 @@
                         <div class="input-group suffix">
                             <!--                            <span class="suffix">x</span>-->
                             <input type="text" tabindex="6" id="js-input-STOR" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
-                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-current="2" data-max="4" data-min="2" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
                                    data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
@@ -117,7 +117,7 @@
                         <div class="input-group suffix">
                             <!--                            <span class="suffix">x</span>-->
                             <input type="text" tabindex="6" id="js-input-VIRT" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
-                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-current="2" data-max="4" data-min="1" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
                                    data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
@@ -131,7 +131,7 @@
                         <div class="input-group suffix">
                             <!--                            <span class="suffix">x</span>-->
                             <input type="text" tabindex="6" id="js-input-TURN" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
-                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-current="2" data-max="4" data-min="1" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
                                    data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
@@ -187,7 +187,7 @@
                         <div class="input-group suffix">
                             <!--                            <span class="suffix">x</span>-->
                             <input type="text" tabindex="6" id="js-input-VEXP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
-                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-current="2" data-max="3" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
                                    data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>
@@ -201,7 +201,7 @@
                         <div class="input-group suffix">
                             <!--                            <span class="suffix">x</span>-->
                             <input type="text" tabindex="6" id="js-input-LEXP" name="js-input-multiple-pre" class="form-control mrs mbs js-widget-input"
-                                   data-current="2" data-max="4" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
+                                   data-current="2" data-max="3" data-type="options-system" pattern="^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$"
                                    data-target="#js-in-multiple-pre" value="Номинальный" disabled style="cursor: default; background: #ffffff;">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default js-decrement" tabindex="-1">–</button>

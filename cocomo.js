@@ -133,6 +133,7 @@ function pe_increment() {
     current = obj.data('current');
     max = obj.data('max');
 
+
     current = parseFloat(current);
     max = parseFloat(max);
 
@@ -176,9 +177,11 @@ function pe_decrement() {
     obj = $(this).parent().prev('input');
     current = obj.data('current');
     max = obj.data('max');
+    min = obj.data('min')
 
     current = parseFloat(current);
     max = parseFloat(max);
+    if (min == undefined) {min = 0} else {min = parseFloat(min)}
 
 //    Обработчик для поля количество строк
     if (obj.data('type') == 'kdsi') {
@@ -192,7 +195,7 @@ function pe_decrement() {
 
     }
 
-    if (current-1 > 0 & obj.data('type') != 'kdsi') {
+    if (current-1 > min & obj.data('type') != 'kdsi') {
 //      Проверка: Кнопка принадлежит выбору типа системы или опций системы
         if (obj.data('type') == 'type-system') {
             obj.val(typeSystem[current-1].toString());
@@ -203,7 +206,7 @@ function pe_decrement() {
 
         obj.data('current', current-1);
 //        Отдельный else для отключения функционирования кнопки
-    } else if (current-1 == 0) {
+    } else if (current-1 == min) {
         if (obj.data('type') == 'type-system') {
             obj.val(typeSystem[current-1].toString());
         }

@@ -26,10 +26,8 @@
       <file leaf-file-name="cocomo.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cocomo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="32" selection-start="302" selection-end="302" vertical-scroll-proportion="-4.5" vertical-offset="104" max-vertical-offset="1530">
-              <folding>
-                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
+            <state line="205" column="57" selection-start="15930" selection-end="15930" vertical-scroll-proportion="-14.384615" vertical-offset="3111" max-vertical-offset="5678">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -37,7 +35,7 @@
       <file leaf-file-name="cocomo.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cocomo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="31" selection-start="235" selection-end="235" vertical-scroll-proportion="0.06049822" vertical-offset="51" max-vertical-offset="4029">
+            <state line="219" column="50" selection-start="7361" selection-end="7361" vertical-scroll-proportion="0.36476868" vertical-offset="3518" max-vertical-offset="4080">
               <folding />
             </state>
           </provider>
@@ -241,9 +239,7 @@
     <entry file="file://$PROJECT_DIR$/cocomo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="26" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="5695">
-          <folding>
-            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -292,16 +288,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cocomo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="32" selection-start="302" selection-end="302" vertical-scroll-proportion="-4.5" vertical-offset="104" max-vertical-offset="1530">
-          <folding>
-            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+        <state line="205" column="57" selection-start="15930" selection-end="15930" vertical-scroll-proportion="-14.384615" vertical-offset="3111" max-vertical-offset="5678">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cocomo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="31" selection-start="235" selection-end="235" vertical-scroll-proportion="0.06049822" vertical-offset="51" max-vertical-offset="4029">
+        <state line="219" column="50" selection-start="7361" selection-end="7361" vertical-scroll-proportion="0.36476868" vertical-offset="3518" max-vertical-offset="4080">
           <folding />
         </state>
       </provider>
