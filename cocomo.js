@@ -22,13 +22,67 @@ function recalculate_widget() {
     var cftool = [1.24, 1.1, 1.0, 0.91, 0.82];
     var cfsced = [1.23, 1.08, 1.0, 1.04, 1.1];
 
-//    Извлечение данных из поля
-    typeSystem = $('#js-input-type').val();
+    var cfс1 = [3.2, 3.0, 2.8];
+    var cfp1 = [1.05, 1.12, 1.2];
+    var cfc2 = [2.4, 2.5, 2.5];
+    var cfp2 = [0.38, 0.35, 0.32];
+
+//    Извлечение из полей атрибутов data-current
+    typeSystem = $('#js-input-type').data('current');
     kdsi = $('#js-input-KDSI').val();
+    curRELY = $('#js-input-RELY').data('current');
+    curDATA = $('#js-input-DATA').data('current');
+    curCPLX = $('#js-input-CPLX').data('current');
+    curTIME = $('#js-input-TIME').data('current');
+    curSTOR = $('#js-input-STOR').data('current');
+    curVIRT = $('#js-input-VIRT').data('current');
+    curTURN = $('#js-input-TURN').data('current');
+    curACAP = $('#js-input-ACAP').data('current');
+    curAEXP = $('#js-input-AEXP').data('current');
+    curPCAP = $('#js-input-PCAP').data('current');
+    curVEXP = $('#js-input-VEXP').data('current');
+    curLEXP = $('#js-input-LEXP').data('current');
+    curMODP = $('#js-input-MODP').data('current');
+    curTOOL = $('#js-input-TOOL').data('current');
+    curSCED = $('#js-input-SCED').data('current');
+
+
+//  Подставление, соответствующих таблице значений, коэффициентов 
+    curRELY = cfrely[curRELY];
+    curDATA = cfdata[curDATA];
+    curCPLX = cfcplx[curCPLX];
+    curTIME = cftime[curTIME];
+    curSTOR = cfstor[curSTOR];
+    curVIRT = cfvirt[curVIRT];
+    curTURN = cfturn[curTURN];
+    curACAP = cfacap[curACAP];
+    curAEXP = cfaexp[curAEXP];
+    curPCAP = cfpcap[curPCAP];
+    curVEXP = cfvexp[curVEXP];
+    curLEXP = cflexp[curLEXP];
+    curMODP = cfmodp[curMODP];
+    curTOOL = cftool[curTOOL];
+    curSCED = cfsced[curSCED];
+
+    c1 = cfс1[typeSystem];
+    p1 = cfp1[typeSystem];
+    c2 = cfc2[typeSystem];
+    p2 = cfp2[typeSystem];
+
+//c1 = 1;
+//c2 = 1;
+//p1=1;
+//p2=1;
+    eaf = curRELY*curDATA*curCPLX*curTIME*curSTOR*curVIRT*curTURN*curACAP*curAEXP*curPCAP*curVEXP*curLEXP*curMODP*curTOOL*curSCED;
+
+//  Вычисление результатов работы
+    workVolume = c1 * eaf * Math.pow(kdsi/1000, p1);
+    timeVolume = c2 * Math.pow(workVolume, p2);
 
 //  Занос данных в таблицу
-    $('#js-in-type').text(typeSystem);
-    $('#js-in-KDSI').text(kdsi);
+    $('#js-out-work').text(Math.round(workVolume));
+    $('#js-out-time').text(Math.round(timeVolume));
+    $('#js-out-eaf').text(precise_round(eaf, 2));
 
 //  Обновление данных в поле страницы
 

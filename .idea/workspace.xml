@@ -26,7 +26,7 @@
       <file leaf-file-name="cocomo.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cocomo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="57" selection-start="15930" selection-end="15930" vertical-scroll-proportion="-14.384615" vertical-offset="3111" max-vertical-offset="5678">
+            <state line="32" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-13.076923" vertical-offset="204" max-vertical-offset="7208">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="cocomo.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cocomo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="50" selection-start="7361" selection-end="7361" vertical-scroll-proportion="0.36476868" vertical-offset="3518" max-vertical-offset="4080">
+            <state line="27" column="34" selection-start="1114" selection-end="1114" vertical-scroll-proportion="-0.529304" vertical-offset="748" max-vertical-offset="4998">
               <folding />
             </state>
           </provider>
@@ -77,10 +77,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1366" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -200,7 +198,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -209,10 +207,10 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.121212125" sideWeight="0.6003401" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12576687" sideWeight="0.67068964" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931036" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -236,6 +234,48 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cocomo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="7191">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocomo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="17" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="4743">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="737" column="15" selection-start="17490" selection-end="17493" vertical-scroll-proportion="0.0" vertical-offset="12219" max-vertical-offset="127483">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocomo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="278" column="24" selection-start="20864" selection-end="20864" vertical-scroll-proportion="0.0" vertical-offset="4606" max-vertical-offset="5933">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocomo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="17" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="4182">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="737" column="15" selection-start="17490" selection-end="17493" vertical-scroll-proportion="0.0" vertical-offset="12219" max-vertical-offset="127483">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cocomo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="26" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="5695">
@@ -288,14 +328,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cocomo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="57" selection-start="15930" selection-end="15930" vertical-scroll-proportion="-14.384615" vertical-offset="3111" max-vertical-offset="5678">
+        <state line="32" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="-13.076923" vertical-offset="204" max-vertical-offset="7208">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cocomo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="50" selection-start="7361" selection-end="7361" vertical-scroll-proportion="0.36476868" vertical-offset="3518" max-vertical-offset="4080">
+        <state line="27" column="34" selection-start="1114" selection-end="1114" vertical-scroll-proportion="-0.529304" vertical-offset="748" max-vertical-offset="4998">
           <folding />
         </state>
       </provider>
