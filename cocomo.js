@@ -1,7 +1,13 @@
+
 function precise_round(num, decimals) {
     var t=Math.pow(10, decimals);
     return (Math.round((num * t) + (decimals>0?1:0)*(Math.sign(num) * (10 / Math.pow(100, decimals)))) / t).toFixed(decimals);
 }
+
+
+
+
+
 
 function recalculate_widget() {
 
@@ -26,6 +32,20 @@ function recalculate_widget() {
     var cfp1 = [1.05, 1.12, 1.2];
     var cfc2 = [2.4, 2.5, 2.5];
     var cfp2 = [0.38, 0.35, 0.32];
+
+//  Распределение процентов работы по стадиям
+    var cfStageWork = [8, 18, 25, 26, 31];
+    var cfStageTime = [36, 36, 18, 18, 28];
+
+    //  Распределение процентов работы по стадиям
+    var cfStageWorkCode = [4, 12, 44, 6, 14, 7, 7, 6];
+
+
+
+
+
+
+
 
 //    Извлечение из полей атрибутов data-current
     typeSystem = $('#js-input-type').data('current');
@@ -69,115 +89,68 @@ function recalculate_widget() {
     c2 = cfc2[typeSystem];
     p2 = cfp2[typeSystem];
 
-//c1 = 1;
-//c2 = 1;
-//p1=1;
-//p2=1;
-    eaf = curRELY*curDATA*curCPLX*curTIME*curSTOR*curVIRT*curTURN*curACAP*curAEXP*curPCAP*curVEXP*curLEXP*curMODP*curTOOL*curSCED;
+
+
+
+
+
+
 
 //  Вычисление результатов работы
+    eaf = curRELY*curDATA*curCPLX*curTIME*curSTOR*curVIRT*curTURN*curACAP*curAEXP*curPCAP*curVEXP*curLEXP*curMODP*curTOOL*curSCED;
+
     workVolume = c1 * eaf * Math.pow(kdsi/1000, p1);
     timeVolume = c2 * Math.pow(workVolume, p2);
+
+    var stageWork = [0,0,0,0,0];
+    var stageTime = [0,0,0,0,0];
+
+//  Формируем первую таблицу
+    workVolumeSum = 0;
+    timeVolumeSum = 0;
+    $.each(stageWork, function(index, val) {
+        stageWork[index] = Math.round(cfStageWork[index] * workVolume / 100);
+        stageTime[index] = Math.round(cfStageTime[index] * timeVolume / 100);
+        $('#js-out-stagework'+ index).text(stageWork[index]);
+        $('#js-out-stagetime'+ index).text(stageTime[index]);
+        workVolumeSum = workVolumeSum + stageWork[index];
+        timeVolumeSum = timeVolumeSum + stageTime[index];
+    });
+
+//  Формируем вторую таблицу
+    var stageWorkCode = [0,0,0,0,0,0,0,0];
+    $.each(stageWorkCode, function(index, val) {
+        stageWorkCode[index] = Math.round(cfStageWorkCode[index] * workVolume / 100);
+        $('#js-out-stageworkcode'+ index).text(stageWorkCode[index]);
+    });
 
 //  Занос данных в таблицу
     $('#js-out-work').text(Math.round(workVolume));
     $('#js-out-time').text(Math.round(timeVolume));
+    $('#js-out-worktable').text(Math.round(workVolumeSum));
+    $('#js-out-timetable').text(Math.round(timeVolumeSum));
+    $('#js-out-workcodetable').text(Math.round(workVolume));
     $('#js-out-eaf').text(precise_round(eaf, 2));
 
-//  Обновление данных в поле страницы
 
+    $("#bars li .bar").each( function( key, bar ) {
+        var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
 
-
-//    revenue = $('#js-input-type').val();
-//    margin = parseFloat($('#js-input-margin').val()) / 100;
-//    multiple_pre = parseFloat($('#js-input-multiple-pre').val());
-//    ebitda_delta = $('#js-input-RELY').val();
-//    multiple_delta = parseFloat($('#js-input-multiple-delta').val());
-
-//    // Round independent cell values
-////    revenue = precise_round(revenue,0);
-//    multiple_pre = precise_round(multiple_pre,1);
-//    multiple_delta = precise_round(multiple_delta,1);
-////    ebitda_delta_display = precise_round(ebitda_delta * 100,0);
-//    margin_display = precise_round(margin * 100,0);
-//
-//    // Update independent cells
-//    $('#js-in-type').text(revenue);
-//    $('#js-in-margin').text(margin_display);
-//    $('#js-in-margin2').text(margin_display);
-//    $('#js-in-multiple-pre').text(multiple_pre);
-//    $('#js-in-RELY').text(ebitda_delta);
-//    $('#js-in-multiple-delta').text(multiple_delta);
-//
-//
-//    // Force input specificity
-//    $('#js-input-type').val(revenue);
-//    $('#js-input-margin').val(margin_display);
-//    $('#js-input-multiple-pre').val(multiple_pre);
-//    $('#js-input-RELY').val(ebitda_delta);
-//    $('#js-input-multiple-delta').val(multiple_delta);
-//
-//
-//
-//
-//    // Calculate and round dependent cells
-//
-//    multiple_post = parseFloat(multiple_pre) + parseFloat(multiple_delta);
-//    multiple_post = precise_round(multiple_post,1);
-//
-//    ebitda = parseFloat(revenue) * margin;
-//    ebitda = precise_round(ebitda,0);
-//
-//    mv_pre = parseFloat(ebitda) * parseFloat(multiple_pre);
-//    mv_pre = precise_round(mv_pre,0);
-//
-//    ebitda_post = parseFloat(ebitda) * (1 + ebitda_delta);
-//    ebitda_post = precise_round(ebitda_post,0);
-//
-//    revenue_post = parseFloat(ebitda_post) / margin;
-//    revenue_post = precise_round(revenue_post,0);
-//
-//    // revenue_delta
-//    revenue_delta = parseFloat(revenue_post) - parseFloat(revenue);
-//    revenue_delta = precise_round(revenue_delta,0);
-//
-//    mv_post = parseFloat(ebitda) * (1 + ebitda_delta) * parseFloat(multiple_post);
-//    mv_post = precise_round(mv_post,0);
-//
-//    mv_delta = parseFloat(mv_post) - parseFloat(mv_pre);
-//    mv_delta = precise_round(mv_delta,0);
-//
-//    // from ebitda
-//    delta_ebitda = ( parseFloat(ebitda_post) - parseFloat(ebitda) ) * parseFloat(multiple_pre);
-//    delta_ebitda = precise_round(delta_ebitda,0);
-//
-//    // from multiple
-//    delta_multiple = parseFloat(mv_delta) - parseFloat(delta_ebitda);
-//    delta_multiple = precise_round(delta_multiple,0);
-//
-//
-//    // Update dependent cells
-//    $('#js-out-multiple-post').text(multiple_post);
-//    $('#js-out-ebitda-pre').text(ebitda);
-//    $('#js-out-mv-pre').text(mv_pre);
-//    $('#js-out-ebitda-post').text(ebitda_post);
-//    $('#js-out-mv-post').text(mv_post);
-//    $('#js-out-revenue-post').text(revenue_post);
-//    $('#js-out-revenue-delta').text(revenue_delta);
-//    $('#js-out-mv-delta').text(mv_delta);
-//    $('#js-out-delta-ebitda').text(delta_ebitda);
-//    $('#js-out-delta-multiple').text(delta_multiple);
-
-
-
-// ----------------------------------------------
-
-    // $('#js-out-delta-ebitda').text(Math.floor( (ebitda * ebitda_delta) - multiple_pre) );
-    // $('#js-out-delta-multiple').text(Math.floor( (ebitda * ebitda_delta * multiple_post) - (ebitda * ebitda_delta * multiple_pre)  ));
-
+        $(this).animate({
+            'height' : percentage + '%'
+        }, 1000);
+    });
 
 }
 
+
+
+
+
+
+
+
+// Кнопка прибавления
 function pe_increment() {
 
     var typeSystem = ["Обычный", "Промежуточный", "Встроенный"];
@@ -223,6 +196,13 @@ function pe_increment() {
     recalculate_widget();
 }
 
+
+
+
+
+
+
+//  Кнопка убавления
 function pe_decrement() {
 
     var typeSystem = ["Обычный", "Промежуточный", "Встроенный"];
@@ -276,6 +256,21 @@ function pe_decrement() {
 
     recalculate_widget();
 }
+
+
+
+
+
+// Animated bar chart
+$(function() {
+  $("#bars li .bar").each( function( key, bar ) {
+    var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
+    
+    $(this).animate({
+      'height' : percentage + '%'
+    }, 1000);
+  });
+});
 
 
 $(function() {

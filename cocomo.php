@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Cocomo calculation</title>
     <link rel="stylesheet" href="style.css" type="text/css"/>
+      <!-- <link rel="stylesheet" href="css/normalize.css"> -->
 
 </head>
 <body>
@@ -14,6 +15,16 @@
 <div class="col-md-8 col-md-offset-2">
 
 <div class="row">
+
+
+
+
+
+
+
+
+
+
 <table class="table table-hover mbl pe-blog-post"> <!-- 9 x 4 table -->
     <tr>
         <th></th>
@@ -28,6 +39,36 @@
         <td><var id="js-out-eaf">1.0</var></td>
     </tr>
 </table>
+
+
+<div class="form-group">
+<div id="chart">
+  <ul id="numbers">
+    <li><span>100%</span></li>
+    <li><span>90%</span></li>
+    <li><span>80%</span></li>
+    <li><span>70%</span></li>
+    <li><span>60%</span></li>
+    <li><span>50%</span></li>
+    <li><span>40%</span></li>
+    <li><span>30%</span></li>
+    <li><span>20%</span></li>
+    <li><span>10%</span></li>
+    <li><span>0%</span></li>
+  </ul>
+
+  <ul id="bars">
+    <li><div data-percentage="56" class="bar"></div><span>Option 1</span></li>
+    <li><div data-percentage="33" class="bar"></div><span>Option 2</span></li>
+    <li><div data-percentage="54" class="bar"></div><span>Option 3</span></li>
+    <li><div data-percentage="94" class="bar"></div><span>Option 4</span></li>
+    <li><div data-percentage="44" class="bar"></div><span>Option 5</span></li>
+    <!-- <li><div data-percentage="23" class="bar"></div><span>Option 6</span> -->
+    </li>
+  </ul>
+</div>
+</div>
+
 <div class="pe-blog-post">
 
 
@@ -348,67 +389,117 @@
 
 <br><br>&nbsp;<br>
 
+
+
 <table class="table table-hover mtl mbl pts pe-blog-post"> <!-- 9 x 4 table -->
     <tr>
-        <th></th>
-        <th>Pre</th>
-        <th><strong>Gain</strong></th>
+        <th>Вид деятельности</th>
+        <th>Работа</th>
+        <th><strong>Время</strong></th>
         <!--                        <th>Post</th>-->
     </tr>
     <tr>
-        <td>Revenue</td>
-        <td><var id="js-in-type">Обычный</var></td>
-        <td class="text-success">▲ $<var id="js-out-revenue-delta">20</var>M</td>
-        <!--                        <td>$<var id="js-out-revenue-post">220</var>M</td>-->
+        <td>Планирование и определение требований</td>
+        <td><var id="js-out-stagework0">46</var></td>
+        <td><var id="js-out-stagetime0">10</var></td>
     </tr>
     <tr>
-        <td>Margin</td>
-        <td><var id="js-in-KDSI">140000</var></td>
-        <td class="subtle">&nbsp;</td>
-        <!--                        <td><var id="js-in-margin2">25</var>%</td>-->
+        <td>Проектирование продукта</td>
+        <td><var id="js-out-stagework1">103</var></td>
+        <td><var id="js-out-stagetime1">10</var></td>
     </tr>
     <tr>
-        <td>EBITDA</td>
-        <td>$<var id="js-out-ebitda-pre">50</var>M</td>
-        <td class="text-success">▲ <var id="js-in-ebitda-delta">10</var>%</td>
-        <!--                        <td>$<var id="js-out-ebitda-post">55</var>M</td>-->
+        <td>Детальное проектирование</td>
+        <td><var id="js-out-stagework2">143</var></td>
+        <td><var id="js-out-stagetime2">5</var></td>
     </tr>
     <tr>
-        <td>Multiple</td>
-        <td><var id="js-in-multiple-pre">8.0</var></td>
-        <td class="text-success">▲ <var id="js-in-multiple-delta">0.6</var></td>
-        <!--                        <td><var id="js-out-multiple-post">8.6</var></td>-->
+        <td>Кодирование и тестирование отдельных модулей</td>
+        <td><var id="js-out-stagework3">149</var></td>
+        <td><var id="js-out-stagetime3">5</var></td>
+    </tr>
+
+   <tr>
+        <td>Интеграция и тестирование</td>
+        <td><var id="js-out-stagework4">178</var></td>
+        <td><var id="js-out-stagetime4">8</var></td>
     </tr>
     <tr>
-        <td><strong>Market Value</strong></td>
-        <td><strong>$<var id="js-out-mv-pre">400</var>M</strong></td>
-        <td class="text-success"><strong>▲ $<var id="js-out-mv-delta">73</var>M</strong></td>
-        <!--                        <td><strong>$<var id="js-out-mv-post">473</var>M</strong></td>-->
+        <td ><strong>Итого</strong></td>
+        <td><strong><var id="js-out-worktable">574</var></strong></td>
+        <td><strong><var id="js-out-timetable">24</var></strong></td>
+    </tr>
+
+
+<table class="table"> <!-- 9 x 4 table -->
+    <tr>
+        <th>Вид деятельности</th>
+        <th>Человеко-месяцы</th>
+        <!--                        <th>Post</th>-->
     </tr>
     <tr>
-        <td style="padding-left: 15px !important">of which</td>
-        <td class="subtle">&nbsp;</td>
-        <td class="subtle">&nbsp;</td>
-        <!--                        <td class="subtle">&nbsp;</td>-->
+        <td>Анализ требований</td>
+        <td><var id="js-out-stageworkcode0">46</var></td>
     </tr>
     <tr>
-        <td style="padding-left: 15px !important">from EBITDA</td>
-        <td class="subtle">&nbsp;</td>
-        <td class="text-success">▲ $<var id="js-out-delta-ebitda">40</var>M</td>
-        <!--                        <td class="subtle">&nbsp;</td>-->
+        <td>Проектирование продукта</td>
+        <td><var id="js-out-stageworkcode1">103</var></td>
     </tr>
     <tr>
-        <td style="padding-left: 15px !important">from Multiple</td>
-        <td class="subtle">&nbsp;</td>
-        <td class="text-success">▲ $<var id="js-out-delta-multiple">33</var>M</td>
-        <!--                        <td class="subtle">&nbsp;</td>-->
+        <td>Программирование</td>
+        <td><var id="js-out-stageworkcode2">143</var></td>
+    </tr>
+    <tr>
+        <td>Планирование тестирования</td>
+        <td><var id="js-out-stageworkcode3">149</var></td>
+    </tr>
+   <tr>
+        <td>Канцелярия проекта</td>
+        <td><var id="js-out-stageworkcode4">178</var></td>    
+    <tr>
+        <td>Детальное проектирование</td>
+        <td><var id="js-out-stageworkcode5">143</var></td>
+    </tr>
+    <tr>
+        <td>Управление конфигурацией и обеспечение качества</td>
+        <td><var id="js-out-stageworkcode6">149</var></td>
+    </tr>
+   <tr>
+        <td>Создание руководств</td>
+        <td><var id="js-out-stageworkcode7">178</var></td>
+    </tr>
+    <tr>
+        <td ><strong>Итого</strong></td>
+        <td><strong><var id="js-out-workcodetable">574</var></strong></td>
     </tr>
 </table>
 
-</div>
-</div>
-</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</div></div></div>
 
 <!--    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
