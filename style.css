@@ -14,91 +14,82 @@ Version: 2.0
 
 
 
-/* Animated bar chart*/
+/*Google charts styles*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400+700);
 body {
-  background: #30303A;
-  font-family: Roboto;
+  font-family: "Open Sans", Arial;
+  background: #EDEDED;
 }
-#chart {
-  width: 650px;
-  height: 300px;
-  margin: 30px auto 0;
-  display: block;
-  background: #30303A;
+main {
+  width: 800px;
+  margin: 10px auto;
+  padding: 10px 40px 30px;
+  background: #FFF;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
-#chart #numbers {
-  width: 50px;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  float: left;
+p {
+  margin-top: 2rem;
+  font-size: 13px;
 }
-#chart #numbers li {
-  text-align: right;
-  padding-right: 1em;
-  list-style: none;
-  height: 29px;
-  border-bottom: 1px solid #444;
-  position: relative;
-  bottom: 30px;
-}
-#chart #numbers li:last-child {
-  height: 30px;
-}
-#chart #numbers li span {
-  color: #eee;
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-}
-#chart #bars {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.2);
+#bar-chart {
   width: 600px;
   height: 300px;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 0 0 1px #444;
+  position: relative;
 }
-#chart #bars li {
-  display: table-cell;
-  width: 100px;
+#line-chart {
+  width: 600px;
   height: 300px;
-  margin: 0;
-  text-align: center;
   position: relative;
 }
-#chart #bars li .bar {
+#bar-chart::before, #line-chart::before {
+  content: "";
+  position: absolute;
   display: block;
-  width: 70px;
-  margin-left: 15px;
-  background: #49E;
-  position: absolute;
-  bottom: 0;
+  width: 220px;
+  height: 30px;
+  left: 215px;
+  top: 254px;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
 }
-#chart #bars li .bar:hover {
-  background: #5AE;
-  cursor: pointer;
-}
-#chart #bars li .bar:hover:before {
-  color: white;
-  content: attr(data-percentage) '%';
+#pie-chart {
+  width: 500px;
+  height: 250px;
   position: relative;
-  bottom: 20px;
 }
-#chart #bars li span {
-  color: #eee;
-  width: 100%;
+#pie-chart::before {
+  content: "";
   position: absolute;
-  bottom: -2em;
-  left: 0;
-  text-align: center;
+  display: block;
+  width: 120px;
+  height: 115px;
+  left: 315px;
+  top: 0;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
 }
-
-
+#pie-chart::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 260px;
+  left: 70px;
+  width: 170px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
+  background: #DDD;
+  padding: 5px 10px;
+  margin: 5px;
+}
 
 
 

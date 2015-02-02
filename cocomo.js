@@ -125,21 +125,26 @@ function recalculate_widget() {
     });
 
 //  Занос данных в таблицу
-    $('#js-out-work').text(Math.round(workVolume));
-    $('#js-out-time').text(Math.round(timeVolume));
+    $('#js-out-work').text(Math.round(workVolumeSum));
+    $('#js-out-time').text(Math.round(timeVolumeSum));
     $('#js-out-worktable').text(Math.round(workVolumeSum));
     $('#js-out-timetable').text(Math.round(timeVolumeSum));
     $('#js-out-workcodetable').text(Math.round(workVolume));
     $('#js-out-eaf').text(precise_round(eaf, 2));
 
 
-    $("#bars li .bar").each( function( key, bar ) {
-        var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
+// // Редактирование bar charts
+//     $("#bars li .bar").each( function( key, bar ) {
+//         var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
+//         // $(this).data('percentage', percentage);
+//         $(this).id = "doit";
 
-        $(this).animate({
-            'height' : percentage + '%'
-        }, 1000);
-    });
+//         $(this).animate({
+//             'height' : percentage + '%'
+//         }, 1000);
+//         $(this).id = "doit";
+//         $(this).data('percentage', percentage);
+//     });
 
 }
 
@@ -192,8 +197,8 @@ function pe_increment() {
     }
     $(this).prev('button').attr('disabled',false);
 
-
     recalculate_widget();
+    drawCharts();   
 }
 
 
@@ -253,24 +258,24 @@ function pe_decrement() {
     }
     $(this).next('button').attr('disabled',false);
 
-
     recalculate_widget();
+    drawCharts();    
 }
 
 
 
 
 
-// Animated bar chart
-$(function() {
-  $("#bars li .bar").each( function( key, bar ) {
-    var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
+// // Animated bar chart
+// $(function() {
+//   $("#bars li .bar").each( function( key, bar ) {
+//     var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
     
-    $(this).animate({
-      'height' : percentage + '%'
-    }, 1000);
-  });
-});
+//     $(this).animate({
+//       'height' : percentage + '%'
+//     }, 1000);
+//   });
+// });
 
 
 $(function() {
@@ -280,5 +285,141 @@ $(function() {
 
     $('.js-widget-input').change(function() {
         recalculate_widget();
+        drawCharts();
     });
 });
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawCharts);
+function drawCharts() {
+  
+  // BEGIN BAR CHART
+
+    var arr = new Array();
+    arr[0] = new Array();
+    arr[0][0] = 'Месяца';
+    arr[0][1] = 'Работники';
+    month = 0;
+    for (var stage = 0; stage < 5; stage++){
+        curStageTime = parseFloat($('#js-out-stagetime'+ stage).text());
+        curStageWork = parseFloat($('#js-out-stagework'+ stage).text());
+        for (var i = 0; i < curStageTime; i++) {
+            month++;
+            arr[month] = new Array();
+            arr[month][0] = month.toString()+' мес.';
+            arr[month][1] = Math.round(curStageWork/curStageTime);            
+            }
+    }
+  
+  // create zero data so the bars will 'grow'
+var barZeroData = new google.visualization.DataTable();
+    barZeroData.addColumn('string', 'Month');
+    barZeroData.addColumn('number', 'Workers');
+    for (var i = 1; i <= month; i++){
+        barZeroData.addRows([[arr[i][0], 0]]);
+    }
+  // actual bar chart data
+  var barData = new google.visualization.DataTable();
+    barData.addColumn('string', 'Месяц');
+    barData.addColumn('number', 'Работников');
+    barData.addColumn({type: 'number', role: 'annotation'});
+    // for (var i = 1; i <= month; i++){
+    //     barData.addRows([[arr[i][0], arr[i][1], arr[i][1]]]);
+    // }
+    month = 0;
+    maxWorkers = 1;
+    for (var stage = 0; stage < 5; stage++){
+        curStageTime = parseFloat($('#js-out-stagetime'+ stage).text());
+        for (var i = 0; i < curStageTime; i++) {
+            month++;
+            if (i==Math.round(curStageTime/2)) {
+                barData.addRows([[arr[month][0], arr[month][1], arr[month][1]]]);
+            } 
+            else{
+                barData.addRows([[arr[month][0], arr[month][1], null]]);
+            };  
+            if (stage == 3) {maxWorkers = arr[month][1]};
+            }
+    }
+ 
+ maxWorkers = Math.round(maxWorkers*1.15);
+
+  // set bar chart options
+  var barOptions = {
+    annotations: {
+      alwaysOutside: true,
+      textStyle: {
+        fontSize: 16,
+        color: '#555',
+        bold: true,
+        auraColor: 'none'
+      }
+    },
+    focusTarget: 'category',
+    backgroundColor: 'transparent',
+    colors: ['cornflowerblue', 'tomato'],
+    fontName: 'Open Sans',
+    chartArea: {
+      left: 50,
+      top: 10,
+      width: '100%',
+      height: '70%'
+    },
+    bar: {
+      groupWidth: '80%'
+    },
+    hAxis: {
+        // title: 'Месяца',
+      textStyle: {        
+        fontSize: 11
+      }
+    },
+    vAxis: {
+        title: 'Работники',
+      minValue: 0,
+      maxValue: maxWorkers,
+      baselineColor: '#DDD',
+      gridlines: {
+        color: '#DDD',
+        count: 10
+      },
+      textStyle: {
+        fontSize: 11
+      }
+    },
+    legend: {
+      position: 'none',
+      // textStyle: {
+      //   fontSize: 12
+      // }
+    },
+    animation: {
+      duration: 1000,
+      easing: 'out'
+    }
+  };
+  // draw bar chart twice so it animates
+  var barChart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
+  barChart.draw(barZeroData, barOptions);
+  barChart.draw(barData, barOptions);
+}

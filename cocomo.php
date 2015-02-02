@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Cocomo calculation</title>
     <link rel="stylesheet" href="style.css" type="text/css"/>
-      <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+      <link rel="stylesheet" href="css/normalize.css">
 
 </head>
 <body>
@@ -19,55 +19,32 @@
 
 
 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <main>
+        <h3 align="center">Количество работников на протяжении всего цикла создания продукта</h3>
+           <div id="bar-chart"></div>
 
 
 
 
 
+        <table class="table table-hover pe-blog-post"> 
+            <tr>
+                <th></th>
+                <th>Работа</th>
+                <th><strong>Время</strong></th>
+                <th>EAF</th>
+            </tr>
+            <tr>
+                <td>Результаты расчета</td>
+                <td><var id="js-out-work">619</var> человеко-месяцев</td>
+                <td><var id="js-out-time">38</var> месяцев</td>
+                <td><var id="js-out-eaf">1.0</var></td>
+            </tr>
+        </table>
+    </main>
 
-<table class="table table-hover mbl pe-blog-post"> <!-- 9 x 4 table -->
-    <tr>
-        <th></th>
-        <th>Работа</th>
-        <th><strong>Время</strong></th>
-        <th>EAF</th>
-    </tr>
-    <tr>
-        <td>Результаты расчета</td>
-        <td><var id="js-out-work">574</var> человеко-месяцев</td>
-        <td><var id="js-out-time">28</var> месяцев</td>
-        <td><var id="js-out-eaf">1.0</var></td>
-    </tr>
-</table>
-
-
-<div class="form-group">
-<div id="chart">
-  <ul id="numbers">
-    <li><span>100%</span></li>
-    <li><span>90%</span></li>
-    <li><span>80%</span></li>
-    <li><span>70%</span></li>
-    <li><span>60%</span></li>
-    <li><span>50%</span></li>
-    <li><span>40%</span></li>
-    <li><span>30%</span></li>
-    <li><span>20%</span></li>
-    <li><span>10%</span></li>
-    <li><span>0%</span></li>
-  </ul>
-
-  <ul id="bars">
-    <li><div data-percentage="56" class="bar"></div><span>Option 1</span></li>
-    <li><div data-percentage="33" class="bar"></div><span>Option 2</span></li>
-    <li><div data-percentage="54" class="bar"></div><span>Option 3</span></li>
-    <li><div data-percentage="94" class="bar"></div><span>Option 4</span></li>
-    <li><div data-percentage="44" class="bar"></div><span>Option 5</span></li>
-    <!-- <li><div data-percentage="23" class="bar"></div><span>Option 6</span> -->
-    </li>
-  </ul>
-</div>
-</div>
 
 <div class="pe-blog-post">
 
@@ -382,16 +359,17 @@
 </div>
 
 
-<!--                    <div class="col-sm-6">-->
-<!--                        <input type="submit" tabindex="6" onClick="recalculate_widget()" class="form-control mts btn btn-primary btn-block" value="Calculate" id="calculate-btn">-->
-<!--                    </div>-->
+                    <div class="col-sm-6">
+                        <input type="submit" tabindex="6" onClick="recalculate_widget()" class="form-control mts btn btn-primary btn-block" value="Calculate" id="calculate-btn">
+                    </div>
 </div>
 
 <br><br>&nbsp;<br>
 
 
-
-<table class="table table-hover mtl mbl pts pe-blog-post"> <!-- 9 x 4 table -->
+<main>
+<table class="table pe-blog-post">
+<h3 align="center">Распределение работ и времени по стадиям жизненного цикла при традиционном подходе</h3> <!-- 9 x 4 table -->
     <tr>
         <th>Вид деятельности</th>
         <th>Работа</th>
@@ -426,12 +404,13 @@
     </tr>
     <tr>
         <td ><strong>Итого</strong></td>
-        <td><strong><var id="js-out-worktable">574</var></strong></td>
-        <td><strong><var id="js-out-timetable">24</var></strong></td>
+        <td><strong><var id="js-out-worktable">619</var></strong></td>
+        <td><strong><var id="js-out-timetable">38</var></strong></td>
     </tr>
 
 
 <table class="table"> <!-- 9 x 4 table -->
+<h3 align="center">Стандартное распределение работ по видам деятельности WBS в модели COCOMO</h3>
     <tr>
         <th>Вид деятельности</th>
         <th>Человеко-месяцы</th>
@@ -475,35 +454,14 @@
 </table>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
+</main>    
 </div></div></div>
 
 <!--    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="cocomo.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"
 
 
 </body>
