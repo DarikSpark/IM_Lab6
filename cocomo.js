@@ -37,7 +37,7 @@ function recalculate_widget() {
     var cfStageWork = [8, 18, 25, 26, 31];
     var cfStageTime = [36, 36, 18, 18, 28];
 
-    //  Распределение процентов работы по стадиям
+//  Распределение процентов работы по стадиям COCOMO
     var cfStageWorkCode = [4, 12, 44, 6, 14, 7, 7, 6];
 
 
@@ -95,7 +95,7 @@ function recalculate_widget() {
 
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////
 //  Вычисление результатов работы
     eaf = curRELY*curDATA*curCPLX*curTIME*curSTOR*curVIRT*curTURN*curACAP*curAEXP*curPCAP*curVEXP*curLEXP*curMODP*curTOOL*curSCED;
 
@@ -132,20 +132,6 @@ function recalculate_widget() {
     $('#js-out-workcodetable').text(Math.round(workVolume));
     $('#js-out-eaf').text(precise_round(eaf, 2));
 
-
-// // Редактирование bar charts
-//     $("#bars li .bar").each( function( key, bar ) {
-//         var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
-//         // $(this).data('percentage', percentage);
-//         $(this).id = "doit";
-
-//         $(this).animate({
-//             'height' : percentage + '%'
-//         }, 1000);
-//         $(this).id = "doit";
-//         $(this).data('percentage', percentage);
-//     });
-
 }
 
 
@@ -154,7 +140,7 @@ function recalculate_widget() {
 
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////
 // Кнопка прибавления
 function pe_increment() {
 
@@ -207,6 +193,10 @@ function pe_increment() {
 
 
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
 //  Кнопка убавления
 function pe_decrement() {
 
@@ -263,21 +253,6 @@ function pe_decrement() {
 }
 
 
-
-
-
-// // Animated bar chart
-// $(function() {
-//   $("#bars li .bar").each( function( key, bar ) {
-//     var percentage = Math.round(parseFloat($('#js-out-stagework'+key).text()) / parseFloat($('#js-out-stagetime'+key).text()));
-    
-//     $(this).animate({
-//       'height' : percentage + '%'
-//     }, 1000);
-//   });
-// });
-
-
 $(function() {
 
     $('.js-increment').click(pe_increment);
@@ -296,18 +271,11 @@ $(function() {
 
 
 
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
 
 
 
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////
+// Рисуем диаграмму количества рабочих
 
 google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawCharts);

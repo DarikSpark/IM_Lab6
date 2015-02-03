@@ -1,19 +1,5 @@
-/*
-Theme Name: WP Data@Ogilvy
-Theme URI: http://www.data-ogilvy.com/
-Description: The Data@Ogilvy Wordpress Theme
-Author: Bryce York & Dany Milham
-Version: 2.0
-*/
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
-/* line 5, vendor/_bootstrap.scss */
 
-
-
-
-
-
-
+/*////////////////////////////////////////////////////////////////////////////////////////*/
 /*Google charts styles*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
@@ -99,6 +85,19 @@ footer {
 
 
 
+
+/*////////////////////////////////////////////////////////////////////////////////////////*/
+/*Bootstrap styles*/
+
+/*
+Theme Name: WP Data@Ogilvy
+Theme URI: http://www.data-ogilvy.com/
+Description: The Data@Ogilvy Wordpress Theme
+Author: Bryce York & Dany Milham
+Version: 2.0
+*/
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/* line 5, vendor/_bootstrap.scss */
 
 
 html {
